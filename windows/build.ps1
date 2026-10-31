@@ -36,8 +36,8 @@ foreach ($p in $pngs) { $w.Write($p) }
 $w.Flush()
 $icoBytes = $ico.ToArray()
 # nur schreiben, wenn anders: der Explorer hält die angezeigte .ico oft gesperrt
-$old = if (Test-Path "$here\Haushalt.ico") { [System.IO.File]::ReadAllBytes("$here\Haushalt.ico") } else { @() }
-if ([Convert]::ToBase64String($old) -ne [Convert]::ToBase64String($icoBytes)) { [System.IO.File]::WriteAllBytes("$here\Haushalt.ico", $icoBytes) }
+$ico_ = "$here\Haushalt.ico"
+if (-not (Test-Path $ico_) -or [Convert]::ToBase64String([System.IO.File]::ReadAllBytes($ico_)) -ne [Convert]::ToBase64String($icoBytes)) { [System.IO.File]::WriteAllBytes($ico_, $icoBytes) }
 
 $csc = "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
 $res = 'index.html', 'styles.css', 'calc.js', 'app.js', 'strom.js', 'zahlungen.js', 'einkauf.js', 'sparen.js', 'bilanz.js', 'geburtstage.js', 'icon-180.png', 'erinnerung.ics' | ForEach-Object { "/resource:$web\$_,$_" }

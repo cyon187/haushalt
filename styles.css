@@ -46,12 +46,12 @@ h1 { font: 800 34px/1.1 -apple-system, "SF Pro Display", system-ui, sans-serif; 
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; display: flex; justify-content: flex-start;
   overflow-x: auto; scrollbar-width: none; /* 7 Bereiche: auf dem Handy wischbar */
   background: rgba(28, 28, 30, .82); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
-  border-top: .5px solid var(--sep); padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  border-top: .5px solid var(--sep); padding: 6px 12px calc(6px + env(safe-area-inset-bottom)); gap: 6px;
 }
 .tabbar::-webkit-scrollbar { display: none; }
-.tabbar button { flex: 1 0 66px; max-width: 120px; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px 0; color: var(--text-3); font-size: 10px; letter-spacing: -.01em; font-weight: 600; position: relative; transition: color .2s; }
+.tabbar button { flex: 1 0 auto; min-width: 78px; max-width: 130px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 12px; color: var(--text-3); font-size: 11px; font-weight: 600; position: relative; transition: color .2s; }
 .tabbar button svg { transition: transform .3s var(--spring); }
-.tabbar button[aria-selected="true"] { color: var(--green); }
+.tabbar button[aria-selected="true"] { color: var(--green); background: var(--green-dim); }
 .tabbar button[aria-selected="true"] svg { transform: scale(1.12); }
 .tabbar .fs { display: none; }
 .tabbar .badge { position: absolute; top: 0; left: calc(50% + 6px); min-width: 18px; height: 18px; border-radius: 9px; background: var(--red); color: #fff; font-size: 12px; line-height: 18px; padding: 0 5px; }
