@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- App-Symbol: Haus mit Gesicht, Blitz-Dachfenster und Münzen als Rauch. RX = Eckenradius (build.ps1 setzt ihn) -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3A3A3C"/><stop offset="1" stop-color="#141415"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".58" r=".5">
+      <stop offset="0" stop-color="#30D158" stop-opacity=".45"/><stop offset="1" stop-color="#30D158" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="roof" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4BE07A"/><stop offset="1" stop-color="#1FA845"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D9E0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="RX" fill="url(#bg)"/>
+  <circle cx="256" cy="300" r="230" fill="url(#glow)"/>
+
+  <!-- Münzen steigen aus dem Schornstein -->
+  <g>
+    <circle cx="404" cy="70" r="20" fill="#FFD60A" stroke="#C99A00" stroke-width="6"/>
+    <circle cx="372" cy="118" r="27" fill="#FFD60A" stroke="#C99A00" stroke-width="7"/>
+    <text x="372" y="129" text-anchor="middle" font-family="Segoe UI, Arial" font-size="32" font-weight="900" fill="#8a6400">€</text>
+  </g>
+  <rect x="336" y="150" width="54" height="96" rx="10" fill="#1A8E3B"/>
+
+  <!-- Haus -->
+  <rect x="128" y="236" width="256" height="196" rx="34" fill="url(#wall)"/>
+  <path d="M96 270 L256 128 L416 270" fill="url(#roof)" stroke="url(#roof)" stroke-width="40" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- Dachfenster mit Blitz -->
+  <circle cx="256" cy="218" r="34" fill="#0B2E16"/>
+  <path d="M262 190 L240 222 H256 L250 246 L274 212 H258 Z" fill="#FFD60A"/>
+
+  <!-- Gesicht -->
+  <ellipse cx="212" cy="318" rx="15" ry="19" fill="#1C1C1E"/>
+  <ellipse cx="300" cy="318" rx="15" ry="19" fill="#1C1C1E"/>
+  <circle cx="217" cy="311" r="5" fill="#fff"/><circle cx="305" cy="311" r="5" fill="#fff"/>
+  <circle cx="178" cy="356" r="17" fill="#FF6B8A" opacity=".55"/><circle cx="334" cy="356" r="17" fill="#FF6B8A" opacity=".55"/>
+  <path d="M218 360 Q256 400 294 360" stroke="#1C1C1E" stroke-width="13" fill="none" stroke-linecap="round"/>
+</svg>
